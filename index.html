@@ -7,10 +7,94 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <title>My Project</title>
+    <title>Weather App</title>
   </head>
   <body>
-    <h1>Project Starter</h1>
-    <h2>Hello</h2>
+  
+    <main>
+      <div class="weather-info">
+        <div class="weather-info__description">Cloudy</div>
+        <div class="weather-info__city">Eskisehir</div>
+        <div class="weather-info__date">Sunday, 9 April '23</div>
+        <div class="weather-info__time">10:01pm</div>
+        <div class="weather-info__temperature">18 C</div>
+        <div class="weather-info__units-c"></div>
+        <div class="weather-info__units-f">display F</div>
+        <div class="weather-info__icon"></div>
+        <div class="weather-info__search-box">
+          <input type="text" class="search-box-input" placeholder="Search location...">
+          <button class="search">
+
+          </button>
+        </div>
+        <div class="weather-info__error-msg" style="visibility: hidden;"></div>
+
+
+      </div>
+      <div class="wheather-details-container">
+
+        <div class="wheather-details">
+          <div class="wheather-details__icon"></div>
+          <div class="wheather-details__info">
+            <div class="wheather-details__label">Feels Like</div>
+            <div id="feels-like" class="wheather-details__data"></div>
+          </div>
+        </div>
+
+        <div class="wheather-details">
+          <div class="wheather-details__icon"></div>
+          <div class="wheather-details__info">
+            <div class="wheather-details__label">Humidity</div>
+            <div id="humidity" class="wheather-details__data"></div>
+          </div>
+        </div>
+
+        <div class="wheather-details">
+          <div class="wheather-details__icon"></div>
+          <div class="wheather-details__info">
+            <div class="wheather-details__label">Chance Of Rain</div>
+            <div id="chance-of-rain" class="wheather-details__data"></div>
+          </div>
+        </div>
+
+        <div class="wheather-details">
+          <div class="wheather-details__icon"></div>
+          <div class="wheather-details__info">
+            <div class="wheather-details__label">Wind Speed</div>
+            <div id="wind-speed" class="wheather-details__data"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- <div class="forecast">
+
+      <div class="change-forecast">
+        <div class="daily-btn">Daily</div>
+        <div class="hourly-btn">Hourly</div>
+        <div class="change-hours">
+          <div class="change-hours__left"></div>
+          <div class="dot dot1 dot-selected"></div>
+          <div class="dot dot2"></div>
+          <div class="dot dot3"></div>
+          <div class="change-hours__right"></div>
+        </div>
+      </div>
+
+      <div class="forecast-hourly-outer-container">
+        <div class="forecast-hourly-container">
+
+        </div>
+      </div>
+
+
+
+
+    </div> -->
+
+
+
   </body>
 </html>
