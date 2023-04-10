@@ -1,3 +1,12 @@
+const searchBtn = document.querySelector('.search')
+searchBtn.addEventListener('click', ()=>{
+    const searchInput = document.querySelector('.search-box-input');
+    const location = searchInput.value;
+    searchLocation(location)
+
+
+})
+
 async function getWeatherInfo(location) {
   const response = await fetch(
     `https://api.weatherapi.com/v1/current.json?key=d2664f26e86a41f8a9282501230604&q=${location}&aqi=no`
@@ -18,15 +27,19 @@ async function getForecastData(location) {
   return info;
 }
 
-getWeatherInfo("Eskisehir").then((value) => {
-  console.log(value);
-  renderWeatherInformation(value);
-  changeTemp(value)
-});
+searchLocation('Eskisehir');
 
 getForecastData("Eskisehir").then((value) => {
-  console.log(value);
+//   console.log(value);
 });
+
+function searchLocation(location) {
+  getWeatherInfo(location).then((value) => {
+    // console.log(value);
+    renderWeatherInformation(value);
+    changeTemp(value);
+  });
+}
 
 function renderWeatherInformation(data) {
   const condition = document.querySelector(".weather-info__condition");
@@ -34,6 +47,8 @@ function renderWeatherInformation(data) {
   const date = document.querySelector(".weather-info__date");
   const time = document.querySelector(".weather-info__time");
   const temperature = document.querySelector(".weather-info__temperature");
+
+  
 
   condition.innerText = data.current.condition.text;
   city.innerText = data.location.name;
@@ -73,22 +88,22 @@ function changeTemperatureToC(data) {
 function changeTemperatureToF(data) {
   const temperature = document.querySelector(".weather-info__temperature");
   temperature.innerText = data.current.temp_f + " °F";
-  
 }
 
 function changeTemp(data) {
   const fButton = document.querySelector(".weather-info__units-f");
   const cButton = document.querySelector(".weather-info__units-c");
 
-  fButton.addEventListener('click', ()=>{
-    changeTemperatureToF(data)
-    fButton.style.display = 'none'
-    cButton.style.display = 'block'
-  })
-  cButton.addEventListener('click', ()=>{
+  fButton.addEventListener("click", () => {
+    changeTemperatureToF(data);
+    fButton.style.display = "none";
+    cButton.style.display = "block";
+  });
+  cButton.addEventListener("click", () => {
     changeTemperatureToC(data);
-    fButton.style.display = 'block'
-    cButton.style.display = 'none'
-
-  })
+    fButton.style.display = "block";
+    cButton.style.display = "none";
+  });
 }
+
+
