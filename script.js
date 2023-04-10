@@ -39,6 +39,9 @@ function searchLocation(location) {
     renderWeatherInformation(value);
     changeTemp(value);
   });
+  getForecastData(location).then(value=>{
+    renderForecastInformation(value)
+  })
 }
 
 function renderWeatherInformation(data) {
@@ -48,13 +51,22 @@ function renderWeatherInformation(data) {
   const time = document.querySelector(".weather-info__time");
   const temperature = document.querySelector(".weather-info__temperature");
 
-  
-
   condition.innerText = data.current.condition.text;
   city.innerText = data.location.name;
   date.innerText = formatDate(data.location.localtime);
   time.innerText = formatTime(data.location.localtime);
   temperature.innerText = data.current.temp_c + " °C";
+
+  const feelsLike = document.getElementById('feels-like');
+  const humidity = document.getElementById('humidity');
+  const windSpeed = document.getElementById('wind-speed');
+
+  feelsLike.innerText = data.current.feelslike_c + " °C";
+  humidity.innerText = data.current.humidity+'%';
+ 
+  windSpeed.innerText =data.current.wind_kph+' km/h'
+
+
 }
 
 function formatDate(dateTime) {
@@ -83,11 +95,17 @@ function formatTime(dateTime) {
 
 function changeTemperatureToC(data) {
   const temperature = document.querySelector(".weather-info__temperature");
+  const feelsLike = document.getElementById('feels-like');
   temperature.innerText = data.current.temp_c + " °C";
+  feelsLike.innerText = data.current.feelslike_c + " °C";
+
 }
 function changeTemperatureToF(data) {
   const temperature = document.querySelector(".weather-info__temperature");
+  const feelsLike = document.getElementById('feels-like');
   temperature.innerText = data.current.temp_f + " °F";
+  feelsLike.innerText = data.current.feelslike_f + " °F";
+
 }
 
 function changeTemp(data) {
@@ -107,3 +125,8 @@ function changeTemp(data) {
 }
 
 
+function renderForecastInformation(data){
+  const chanceOfRain = document.getElementById('chance-of-rain');
+  chanceOfRain.innerText = data.forecast.forecastday[0].day.daily_chance_of_rain + '%'
+    
+}
