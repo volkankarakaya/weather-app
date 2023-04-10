@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Weather App</title>
@@ -13,18 +13,19 @@
   
     <main>
       <div class="weather-info">
-        <div class="weather-info__description">Cloudy</div>
-        <div class="weather-info__city">Eskisehir</div>
+        <div class="weather-info__condition"></div>
+        <div class="weather-info__city"></div>
         <div class="weather-info__date">Sunday, 9 April '23</div>
         <div class="weather-info__time">10:01pm</div>
         <div class="weather-info__temperature">18 C</div>
-        <div class="weather-info__units-c"></div>
-        <div class="weather-info__units-f">display F</div>
+        <button class="weather-info__units-c" style="display:none">display C</button>
+        <button class="weather-info__units-f">display F</button>
         <div class="weather-info__icon"></div>
         <div class="weather-info__search-box">
           <input type="text" class="search-box-input" placeholder="Search location...">
           <button class="search">
-
+            <i class="fas fa-search"></i>
+            
           </button>
         </div>
         <div class="weather-info__error-msg" style="visibility: hidden;"></div>
@@ -34,7 +35,9 @@
       <div class="wheather-details-container">
 
         <div class="wheather-details">
-          <div class="wheather-details__icon"></div>
+          <div class="wheather-details__icon">
+            <i class="fas fa-temperature-high"></i>
+          </div>
           <div class="wheather-details__info">
             <div class="wheather-details__label">Feels Like</div>
             <div id="feels-like" class="wheather-details__data"></div>
@@ -42,7 +45,9 @@
         </div>
 
         <div class="wheather-details">
-          <div class="wheather-details__icon"></div>
+          <div class="wheather-details__icon">
+            <i class="fas fa-droplet"></i>
+          </div>
           <div class="wheather-details__info">
             <div class="wheather-details__label">Humidity</div>
             <div id="humidity" class="wheather-details__data"></div>
@@ -50,7 +55,9 @@
         </div>
 
         <div class="wheather-details">
-          <div class="wheather-details__icon"></div>
+          <div class="wheather-details__icon">
+            <i class="fa-solid fa-cloud-rain"></i>
+          </div>
           <div class="wheather-details__info">
             <div class="wheather-details__label">Chance Of Rain</div>
             <div id="chance-of-rain" class="wheather-details__data"></div>
@@ -58,7 +65,9 @@
         </div>
 
         <div class="wheather-details">
-          <div class="wheather-details__icon"></div>
+          <div class="wheather-details__icon">
+            <i class="fas fa-wind"></i>
+          </div>
           <div class="wheather-details__info">
             <div class="wheather-details__label">Wind Speed</div>
             <div id="wind-speed" class="wheather-details__data"></div>
