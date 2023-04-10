@@ -61,6 +61,12 @@ function renderWeatherInformation(data) {
   const humidity = document.getElementById('humidity');
   const windSpeed = document.getElementById('wind-speed');
 
+  const weatherInfoIconContainer = document.querySelector('.weather-info__icon');
+  weatherInfoIconContainer.innerHTML = ''
+  const weatherInfoIcon = document.createElement("img");
+  weatherInfoIcon.src = data.current.condition.icon;
+  weatherInfoIconContainer.appendChild(weatherInfoIcon)
+
   feelsLike.innerText = data.current.feelslike_c + " °C";
   humidity.innerText = data.current.humidity+'%';
  
