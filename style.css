@@ -1,16 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap');
 *{
     box-sizing: border-box ;
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
+    background: url(./assets/background.jpg) no-repeat ;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    
     height: 100vh;
     overflow: hidden;
+    color:#fff;
+    padding: 80px;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.wheather-details-container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+}
+
+.wheather-details{
+    display: flex;
+    
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+    
+
+}
+.wheather-details__icon{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wheather-details__info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+}
+
+.wheather-details__label{
+    font-size: 12px;
+
+}
+.wheather-details__data{
+    font-size: 28px;
+}
+
+.wheather-details i{
+   
+    font-size: 32px;
+}
+
+
+.weather-info__condition{
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+
+}
+
+.weather-info__city{
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.weather-info__date,.weather-info__time{
+    font-size: 1rem;
+}
+
+.weather-info__temperature{
+    font-size: 6rem;
+    /* font-weight: 700; */
+}
+
+button.weather-info__units-c,
+button.weather-info__units-f{
+    font-size: 0.8rem;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background: transparent;
+    color: #fff;
+}
+.search-box-input:focus, .search-box-input:active{
+    outline: none;
+}
+
+.search-box-input{
+    border: 0;
+    border-bottom: 3px solid #fff;
+    background: transparent;
+    color: white;
+    font-size: 1.2rem;
+    width: 160px;
+    
+}
+
+
+button.search{
+    border:0;
+    background: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
